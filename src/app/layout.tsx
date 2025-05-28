@@ -1,7 +1,7 @@
+import Layout from "@/components/Layout";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Layout from "@/components/Layout";
 
 const poppins = Poppins({
   weight: "400",
@@ -25,6 +25,7 @@ export default function RootLayout({
       <body
         className={poppins.className}
       >
+
         <Layout>
           {children}
         </Layout>
