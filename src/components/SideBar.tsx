@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import { mdiBriefcase, mdiHome, mdiHammerScrewdriver, mdiForum } from "@mdi/js";
 
 const SideBar = () => {
+
     return (
         <>
             <div
