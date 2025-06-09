@@ -1,19 +1,37 @@
-import clsx from "clsx";
+"use client";
+
+import { Size } from "@/constants/variable";
 import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Size } from "@/constants/variable";
-import { Dispatch, SetStateAction, useState } from "react";
+import clsx from "clsx";
+import { MouseEvent, useState } from "react";
+import { useResizeDetector } from "react-resize-detector";
+import SideBar from "./SideBar";
 
-const Header = ({
-  setIsOpen,
-}: {
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-}) => {
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { width, ref } = useResizeDetector({
+    onResize: () => {
+      // Perform actions on resize
+    },
+    handleWidth: true,
+    refreshMode: "debounce",
+    refreshRate: 100,
+  });
+
+  function handleClick(e: MouseEvent<HTMLSpanElement>) {
+    e.stopPropagation()
+    setIsOpen(!isOpen)
+    console.log(isOpen)
+  }
+
   return (
     <header
       className={clsx(
-        "w-full flex justify-center px-2 py-5 lg:px-10 bg-blue-400 text-white"
+        "relative w-full flex justify-center px-2 py-5 lg:px-10 bg-blue-400 text-white"
       )}
+      ref={ref}
     >
       <div
         style={{ maxWidth: Size.MOBILE_SIZE_MAX }}
@@ -22,15 +40,18 @@ const Header = ({
         )}
       >
         <span
-          onClick={() =>
-            setIsOpen((prev) => {
-              return !prev;
-            })
-          }
+          className="lg:hidden block relative z-10"
+          onClick={handleClick}
         >
-          <Icon path={mdiMenu} size={2} className="lg:hidden block" />
+          <Icon path={mdiMenu} size={2} />
         </span>
         <div className="font-bold text-xl">Header</div>
+      </div>
+      <div className="relative z-0">
+
+        {width! > Size.MOBILE_SIZE_MAX && <SideBar />}
+
+        {isOpen && <SideBar />}
       </div>
     </header>
   );

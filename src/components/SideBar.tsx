@@ -1,15 +1,18 @@
-import clsx from "clsx";
-import React, { useState } from "react";
+import { mdiBriefcase, mdiForum, mdiHammerScrewdriver, mdiHome } from "@mdi/js";
 import Icon from "@mdi/react";
-import { mdiBriefcase, mdiHome, mdiHammerScrewdriver, mdiForum } from "@mdi/js";
+import clsx from "clsx";
 
 const SideBar = () => {
+
+
   return (
     <>
+
       <div
         className={clsx(
-          "fixed flex flex-col h-screen justify-center items-center  ml-1 lg:ml-5 text-white"
+          "fixed left-0 flex flex-col h-screen justify-center items-center  ml-1 lg:ml-5 text-white"
         )}
+
       >
         <div
           className={clsx(
@@ -46,6 +49,8 @@ const SideBar = () => {
           </span>
         </div>
       </div>
+
+
     </>
   );
 };
