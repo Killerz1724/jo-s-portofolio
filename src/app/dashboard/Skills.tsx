@@ -9,6 +9,7 @@ import reactIcon from "../../assets/react-icon.png";
 import tsIcon from "../../assets/typescript-icon.png";
 import nextJsIcon from "../../assets/next-icon.png";
 import tailwindIcon from "@/assets/tailwind-icon.png"
+import tensorflowIcon from "@/assets/tensorflow-icon.png"
 
 const Skills = () => {
     return (
@@ -26,7 +27,7 @@ const Skills = () => {
                     />
                 </span>
             </div>
-            <div className="flex flex-col md:flex-row gap-[3rem] items-center">
+            <div className="grid grid-cols-2 lg:grid-flow-col gap-[3rem] items-center ">
                 <Image
                     src={golangIcon}
                     alt="golang icon"
@@ -50,6 +51,11 @@ const Skills = () => {
                 <Image
                     src={tailwindIcon}
                     alt="tailwind icon"
+                    className={clsx("w-[100px] h-[100px] object-contain")}
+                />
+                <Image
+                    src={tensorflowIcon}
+                    alt="tensorflow icon"
                     className={clsx("w-[100px] h-[100px] object-contain")}
                 />
             </div>

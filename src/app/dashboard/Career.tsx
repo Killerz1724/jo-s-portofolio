@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import React from "react";
-import style from "./dashboard.module.css";
-import Icon from "@mdi/react";
-import { mdiBriefcase } from "@mdi/js";
-import CareerCard from "@/components/CareerCard";
 import seaLabIcon from "@/assets/seo-logo.png";
+import CareerCard from "@/components/CareerCard";
+import bangkitLogo from "@/assets/bangkit-logo.png"
+import { mdiBriefcase } from "@mdi/js";
+import Icon from "@mdi/react";
+import clsx from "clsx";
+import style from "./dashboard.module.css";
 
 const Career = () => {
     return (
@@ -22,19 +22,29 @@ const Career = () => {
                     />
                 </span>
             </div>
-            <div className="grid grid-cols-1 items-stretch lg:grid-cols-2  gap-[1rem]">
+            <div className="grid grid-cols-1 items-stretch lg:grid-cols-3  gap-[1rem]">
                 <CareerCard
                     alt="sea lab icon"
                     src={seaLabIcon}
-                    title="Sea Labs Bootcamp Indonesia"
+                    title="Software Engineering Bootcamp"
                     position="Trainee"
                     tags={["Golang", "Tailwind", "Typescript", "React", "NextJs"]}
+                    duration={{ start: "march 2025", end: "now" }}
                 />
                 <CareerCard
                     alt="freelance-icon"
                     position="Frontend Developer"
                     tags={["React", "Tailwind", "Typescript"]}
-                    title="FORSIKATEL (Freelance)"
+                    title="Quran Recitation Report Web (Freelance)"
+                    duration={{ start: "february 2025", end: "march 2025" }}
+                />
+                <CareerCard
+                    alt="bangkit logo"
+                    src={bangkitLogo}
+                    position="cohort"
+                    tags={["tensorflow", "python"]}
+                    title="Bangkit Academy: Machine Learning Path"
+                    duration={{ start: "february 2023", end: "july 2023" }}
                 />
             </div>
         </section>

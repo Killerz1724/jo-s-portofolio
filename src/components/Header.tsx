@@ -45,7 +45,6 @@ const Header = () => {
         >
           <Icon path={mdiMenu} size={2} />
         </span>
-        <div className="font-bold text-xl">Header</div>
       </div>
       <div className="relative z-0">
 
