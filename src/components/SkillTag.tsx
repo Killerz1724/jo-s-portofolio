@@ -1,17 +1,27 @@
-import clsx from 'clsx'
-import { randomInt } from 'crypto'
-import React from 'react'
+import clsxm from "@riverfl0w/clsxm";
+import React from "react";
 
-const colours = ["bg-[#1F3A93]", "bg-[#D64541]", "bg-[#16A085]", "bg-[#8E44AD]", "bg-[#E67E22]"]
+const SkillTag = ({
+  text,
+  color,
+}: {
+  text: string;
+  color: "darkBlue" | "red" | "green" | "purple" | "orange";
+}) => {
+  return (
+    <div
+      className={clsxm(
+        "px-2 py-1 rounded-md text-white",
+        color === "darkBlue" && "bg-[#1F3A93]",
+        color === "red" && "bg-[#D64541]",
+        color === "green" && "bg-[#16A085]",
+        color === "purple" && "bg-[#8E44AD]",
+        color === "orange" && "bg-[#E67E22]"
+      )}
+    >
+      <span className="font-semibold text-xs">{text}</span>
+    </div>
+  );
+};
 
-const SkillTag = ({ text }: { text: string }) => {
-    const randomIndex = randomInt(colours.length)
-    const color = colours[randomIndex]
-    return (
-        <div className={clsx('px-2 py-1 rounded-md text-white', color)}>
-            <span className='font-semibold text-xs'>{text}</span>
-        </div>
-    )
-}
-
-export default SkillTag
+export default SkillTag;
