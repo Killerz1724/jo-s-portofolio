@@ -6,7 +6,7 @@ import style from "./dashboard.module.css";
 
 const Headline = () => {
   return (
-    <div id="headline" className={clsx(style.sectionDashboard)}>
+    <section id="headline" className={clsx(style.sectionDashboard)}>
       <h2 className={clsx("font-black text-2xl")}>
         Hello <span className="text-blue-600">Comrade!</span>
       </h2>
@@ -22,7 +22,7 @@ const Headline = () => {
         interdisciplinary skills to develop impactful solutions that improve
         quality of life through advanced technology
       </p>
-    </div>
+    </section>
   );
 };
 

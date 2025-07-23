@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         destination: "/dashboard",
         permanent: true,
       },
+      {
+        source: "/linkedin",
+        destination: "https://www.linkedin.com/in/tejo-rifqi-hananto-56760620a",
+        permanent: false,
+        basePath: false,
+      },
     ];
   },
 };

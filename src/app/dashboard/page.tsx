@@ -1,57 +1,17 @@
 import clsx from "clsx";
 import Headline from "./Headline";
-import style from "./dashboard.module.css";
-import Icon from "@mdi/react";
-import { mdiHammerScrewdriver } from "@mdi/js";
-import Image from "next/image";
-import golangIcon from "../../assets/golang-logo-png.webp";
-import reactIcon from "../../assets/react-icon.png";
-import tsIcon from "../../assets/typescript-icon.png";
-import nextJsIcon from "../../assets/next-icon.png";
+import Skills from "./Skills";
+import Career from "./Career";
+
 
 const Dashboard = () => {
-  return (
-    <div className={clsx("w-full flex flex-col items-center gap-[3rem]")}>
-      <Headline />
-      <div id="skills" className={clsx(style.sectionDashboard)}>
-        <div className="flex items-center gap-[0.5rem]">
-          <h2 className="font-bold text-4xl">
-            My <span className="text-blue-600">Skills</span>
-          </h2>
-          <span>
-            <Icon
-              path={mdiHammerScrewdriver}
-              className={clsx("size-[2rem] lg:size-[3rem]")}
-              size={1.5}
-              color={"#2563eb"}
-            />
-          </span>
+    return (
+        <div className={clsx("w-full flex flex-col items-center gap-[10rem]")}>
+            <Headline />
+            <Skills />
+            <Career />
         </div>
-        <div className="flex flex-col md:flex-row gap-[3rem] items-center">
-          <Image
-            src={golangIcon}
-            alt="golang icon"
-            className={clsx("w-[120px] h-[120px] object-contain")}
-          />
-          <Image
-            src={reactIcon}
-            alt="react icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-          <Image
-            src={tsIcon}
-            alt="typescript icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-          <Image
-            src={nextJsIcon}
-            alt="nextJs icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Dashboard;
