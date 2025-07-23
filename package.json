@@ -11,6 +11,7 @@
   "dependencies": {
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
+    "@riverfl0w/clsxm": "^0.1.2",
     "clsx": "^2.1.1",
     "next": "15.1.8",
     "react": "^19.0.0",
