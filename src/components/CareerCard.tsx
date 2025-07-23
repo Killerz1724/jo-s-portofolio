@@ -1,6 +1,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import SkillTag from "./SkillTag";
+import SkillTag, { coloursTagSelection } from "./SkillTag";
 import freelanceIcon from "@/assets/freelance-icon.png";
 import { convertMonthDuration } from "@/utils/convertMonthsDuration";
 
@@ -11,7 +11,7 @@ interface careerCardProps {
   position: string;
   tags: {
     text: string;
-    color: "darkBlue" | "red" | "green" | "purple" | "orange";
+    color: (typeof coloursTagSelection)[number];
   }[];
   duration: {
     start: string;

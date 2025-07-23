@@ -1,12 +1,20 @@
 import clsxm from "@riverfl0w/clsxm";
 import React from "react";
 
+export const coloursTagSelection = [
+  "darkBlue",
+  "red",
+  "green",
+  "purple",
+  "orange",
+  "lightBlue",
+];
 const SkillTag = ({
   text,
   color,
 }: {
   text: string;
-  color: "darkBlue" | "red" | "green" | "purple" | "orange";
+  color: (typeof coloursTagSelection)[number];
 }) => {
   return (
     <div
@@ -16,7 +24,8 @@ const SkillTag = ({
         color === "red" && "bg-[#D64541]",
         color === "green" && "bg-[#16A085]",
         color === "purple" && "bg-[#8E44AD]",
-        color === "orange" && "bg-[#E67E22]"
+        color === "orange" && "bg-[#E67E22]",
+        color === "lightBlue" && "bg-[#90D5FF]"
       )}
     >
       <span className="font-semibold text-xs">{text}</span>

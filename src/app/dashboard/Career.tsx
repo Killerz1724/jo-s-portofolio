@@ -33,9 +33,9 @@ const Career = () => {
               text: "Golang",
               color: "darkBlue",
             },
-            { text: "Tailwind", color: "darkBlue" },
+            { text: "Tailwind", color: "lightBlue" },
             { text: "Typescript", color: "darkBlue" },
-            { text: "React", color: "darkBlue" },
+            { text: "React", color: "lightBlue" },
             { text: "NextJs", color: "red" },
           ]}
           duration={{ start: "march 2025", end: "now" }}
@@ -44,9 +44,9 @@ const Career = () => {
           alt="freelance-icon"
           position="Frontend Developer"
           tags={[
-            { text: "Tailwind", color: "darkBlue" },
+            { text: "Tailwind", color: "lightBlue" },
             { text: "Typescript", color: "darkBlue" },
-            { text: "React", color: "darkBlue" },
+            { text: "React", color: "lightBlue" },
           ]}
           title="Quran Recitation Report Web (Freelance)"
           duration={{ start: "february 2025", end: "march 2025" }}
