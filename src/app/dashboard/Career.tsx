@@ -38,7 +38,8 @@ const Career = () => {
             { text: "React", color: "lightBlue" },
             { text: "NextJs", color: "red" },
           ]}
-          duration={{ start: "march 2025", end: "now" }}
+          duration={{ start: "february 2025", end: "now" }}
+          pathName="sea-lab"
         />
         <CareerCard
           alt="freelance-icon"
@@ -50,6 +51,7 @@ const Career = () => {
           ]}
           title="Quran Recitation Report Web (Freelance)"
           duration={{ start: "february 2025", end: "march 2025" }}
+          pathName="freelance-forsikatel"
         />
         <CareerCard
           alt="bangkit logo"
@@ -61,6 +63,7 @@ const Career = () => {
           ]}
           title="Bangkit Academy: Machine Learning Path"
           duration={{ start: "february 2023", end: "july 2023" }}
+          pathName="bangkit-ml"
         />
       </div>
     </section>

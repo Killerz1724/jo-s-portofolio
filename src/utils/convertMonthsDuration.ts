@@ -33,10 +33,12 @@ export const convertMonthDuration = ({
   const yearStart = Number(splitStart[1].toLowerCase());
   const yearEnd = splitEnd[1] && Number(splitEnd[1].toLowerCase());
 
-  const monthNow = new Date().getMonth();
+  const monthNow = new Date().getMonth() + 1;
   const yearNow = new Date().getFullYear();
+
   const durMont =
-    monthEnd === -1 ? monthNow - monthStart : monthEnd - monthStart;
+    monthEnd === 0 ? monthNow - monthStart : monthEnd - monthStart;
+
   const durYear = yearEnd ? yearEnd - yearStart : yearNow - yearStart;
 
   return { month: durMont > 0 ? durMont : durMont * -1, year: durYear };

@@ -18,6 +18,7 @@ interface careerCardProps {
     start: string;
     end: string;
   };
+  pathName: string;
 }
 
 const CareerCard: React.FC<careerCardProps> = ({
@@ -27,6 +28,7 @@ const CareerCard: React.FC<careerCardProps> = ({
   position,
   tags,
   duration,
+  pathName,
 }) => {
   const { month, year } = convertMonthDuration({
     start: duration.start,
@@ -65,7 +67,7 @@ const CareerCard: React.FC<careerCardProps> = ({
           </span>
         </h4>
       </div>
-      <ButtonLink href={`/CareerDetails/${title}`}>Details</ButtonLink>
+      <ButtonLink href={`/CareerDetails/${pathName}`}>Details</ButtonLink>
     </div>
   );
 };
