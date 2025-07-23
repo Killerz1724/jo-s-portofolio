@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import SkillTag, { coloursTagSelection } from "./SkillTag";
 import freelanceIcon from "@/assets/freelance-icon.png";
 import { convertMonthDuration } from "@/utils/convertMonthsDuration";
+import ButtonLink from "./ButtonLink";
 
 interface careerCardProps {
   src?: StaticImageData;
@@ -64,6 +65,7 @@ const CareerCard: React.FC<careerCardProps> = ({
           </span>
         </h4>
       </div>
+      <ButtonLink href={`/CareerDetails/${title}`}>Details</ButtonLink>
     </div>
   );
 };
