@@ -1,6 +1,7 @@
 import clsxm from "@riverfl0w/clsxm";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
+import freelanceIcon from "@/assets/freelance-icon.png";
 
 export default function CareerContent({
   children,
@@ -10,23 +11,33 @@ export default function CareerContent({
   className?: string;
 }) {
   return (
-    <section className={clsxm("flex flex-col", className)}>{children}</section>
+    <section
+      className={clsxm("flex flex-col items-center gap-8 w-full", className)}
+    >
+      {children}
+    </section>
   );
 }
 
 const Title = ({ children }: { children: React.ReactNode }) => (
-  <h2>{children}</h2>
+  <h2 className="font-bold text-xl sm:text-3xl text-center">{children}</h2>
 );
 
 CareerContent.Title = Title;
-const CareerImg = ({ src, alt }: { src: string; alt: string }) => (
-  <Image src={src} alt={alt} />
+const CareerImg = ({ src, alt }: { src?: StaticImageData; alt: string }) => (
+  <>
+    {src ? (
+      <Image src={src} alt={alt} height={500} width={500} />
+    ) : (
+      <Image src={freelanceIcon} alt={alt} height={400} width={400} />
+    )}
+  </>
 );
 
 CareerContent.CareerImg = CareerImg;
 
 const Description = ({ children }: { children: React.ReactNode }) => (
-  <p>{children}</p>
+  <p className="text-justify">{children}</p>
 );
 
 CareerContent.Description = Description;
