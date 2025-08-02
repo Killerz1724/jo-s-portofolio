@@ -1,18 +1,15 @@
 import { mdiBriefcase, mdiForum, mdiHammerScrewdriver, mdiHome } from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
+import Link from "next/link";
 
 const SideBar = () => {
-
-
   return (
     <>
-
       <div
         className={clsx(
           "fixed left-0 flex flex-col h-screen justify-center items-center  ml-1 lg:ml-5 text-white"
         )}
-
       >
         <div
           className={clsx(
@@ -20,37 +17,43 @@ const SideBar = () => {
           )}
         >
           <span>
-            <Icon
-              path={mdiHome}
-              className="size-[2rem] lg:size-[3rem]"
-              color={"white"}
-            />
+            <Link href="/#headline">
+              <Icon
+                path={mdiHome}
+                className="size-[2rem] lg:size-[2rem]"
+                color={"white"}
+              />
+            </Link>
           </span>
           <span>
-            <Icon
-              path={mdiHammerScrewdriver}
-              className="size-[2rem] lg:size-[3rem]"
-              color={"white"}
-            />
+            <Link href="/#skills">
+              <Icon
+                path={mdiHammerScrewdriver}
+                className="size-[2rem] lg:size-[2rem]"
+                color={"white"}
+              />
+            </Link>
           </span>
           <span>
-            <Icon
-              path={mdiBriefcase}
-              className="size-[2rem] lg:size-[3rem]"
-              color={"white"}
-            />
+            <Link href="/#career">
+              <Icon
+                path={mdiBriefcase}
+                className="size-[2rem] lg:size-[2rem]"
+                color={"white"}
+              />
+            </Link>
           </span>
           <span>
-            <Icon
-              path={mdiForum}
-              className="size-[2rem] lg:size-[3rem]"
-              color={"white"}
-            />
+            <Link href="/#contact">
+              <Icon
+                path={mdiForum}
+                className="size-[2rem] lg:size-[2rem]"
+                color={"white"}
+              />
+            </Link>
           </span>
         </div>
       </div>
-
-
     </>
   );
 };

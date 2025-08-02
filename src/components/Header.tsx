@@ -16,14 +16,14 @@ const Header = () => {
       // Perform actions on resize
     },
     handleWidth: true,
-    refreshMode: "debounce",
-    refreshRate: 100,
+    refreshMode: "throttle",
+    refreshRate: 20,
   });
 
   function handleClick(e: MouseEvent<HTMLSpanElement>) {
-    e.stopPropagation()
-    setIsOpen(!isOpen)
-    console.log(isOpen)
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+    console.log(isOpen);
   }
 
   return (
@@ -39,16 +39,12 @@ const Header = () => {
           "flex w-full max-w-[768px] justify-between items-center"
         )}
       >
-        <span
-          className="lg:hidden block relative z-10"
-          onClick={handleClick}
-        >
+        <span className="lg:hidden block relative z-10" onClick={handleClick}>
           <Icon path={mdiMenu} size={2} />
         </span>
       </div>
       <div className="relative z-0">
-
-        {width! > Size.MOBILE_SIZE_MAX && <SideBar />}
+        {width! > 1024 && <SideBar />}
 
         {isOpen && <SideBar />}
       </div>
