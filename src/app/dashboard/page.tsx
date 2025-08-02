@@ -6,7 +6,7 @@ import AnimateOnScroll from "@/lib/AnimateOnScroll";
 
 const Dashboard = () => {
   return (
-    <div className={clsx("w-full flex flex-col items-center gap-[10rem]")}>
+    <div className={clsx("w-full flex flex-col items-center gap-[15rem]")}>
       <AnimateOnScroll>
         <Headline />
       </AnimateOnScroll>

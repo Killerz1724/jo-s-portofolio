@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        "relative w-full flex justify-center px-2 py-5 lg:px-10 bg-blue-400 text-white"
+        "fixed lg:relative w-full flex justify-center px-2 py-5 lg:px-10 bg-blue-400 text-white"
       )}
       ref={ref}
     >
