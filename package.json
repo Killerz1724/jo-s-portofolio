@@ -13,6 +13,7 @@
     "@mdi/react": "^1.6.1",
     "@riverfl0w/clsxm": "^0.1.2",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
     "next": "15.1.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
