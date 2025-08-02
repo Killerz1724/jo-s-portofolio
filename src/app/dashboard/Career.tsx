@@ -1,6 +1,5 @@
-import seaLabIcon from "@/assets/seo-logo.png";
 import CareerCard from "@/components/CareerCard";
-import bangkitLogo from "@/assets/bangkit-logo.png";
+import { Careers } from "@/constants/careerdetailsconst";
 import { mdiBriefcase } from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
@@ -23,48 +22,20 @@ const Career = () => {
         </span>
       </div>
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-3  gap-[1rem]">
-        <CareerCard
-          alt="sea lab icon"
-          src={seaLabIcon}
-          title="Software Engineering Bootcamp"
-          position="Trainee"
-          tags={[
-            {
-              text: "Golang",
-              color: "darkBlue",
-            },
-            { text: "Tailwind", color: "lightBlue" },
-            { text: "Typescript", color: "darkBlue" },
-            { text: "React", color: "lightBlue" },
-            { text: "NextJs", color: "red" },
-          ]}
-          duration={{ start: "february 2025", end: "now" }}
-          pathName="sea-lab"
-        />
-        <CareerCard
-          alt="freelance-icon"
-          position="Frontend Developer"
-          tags={[
-            { text: "Tailwind", color: "lightBlue" },
-            { text: "Typescript", color: "darkBlue" },
-            { text: "React", color: "lightBlue" },
-          ]}
-          title="Quran Recitation Report Web (Freelance)"
-          duration={{ start: "february 2025", end: "march 2025" }}
-          pathName="freelance-forsikatel"
-        />
-        <CareerCard
-          alt="bangkit logo"
-          src={bangkitLogo}
-          position="cohort"
-          tags={[
-            { text: "Tensorflow", color: "orange" },
-            { text: "Python", color: "darkBlue" },
-          ]}
-          title="Bangkit Academy: Machine Learning Path"
-          duration={{ start: "february 2023", end: "july 2023" }}
-          pathName="bangkit-ml"
-        />
+        {Careers.map((val, i) => {
+          return (
+            <CareerCard
+              key={i}
+              alt={val.alt}
+              duration={val.duration}
+              pathName={val.pathName}
+              position={val.position}
+              tags={val.tags}
+              title={val.title}
+              src={val.src}
+            />
+          );
+        })}
       </div>
     </section>
   );
