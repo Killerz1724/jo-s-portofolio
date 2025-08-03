@@ -16,11 +16,12 @@ const Headline = () => {
         className={clsx("w-[300px] h-[300px] object-cover")}
       />
       <p className="text-center">
-        My name is <span className="text-blue-600">Tejo</span>, I am a
-        Biomedical Engineering graduate with a strong passion for Machine
-        Learning and Software Engineering. I aim to leverage my
-        interdisciplinary skills to develop impactful solutions that improve
-        quality of life through advanced technology
+        My name is Tejo Rifqi Hananto, also known as{" "}
+        <span className="text-blue-600">Tejo</span>, I am a Biomedical
+        Engineering graduate with a strong passion for Machine Learning and
+        Software Engineering. I aim to leverage my interdisciplinary skills to
+        develop impactful solutions that improve quality of life through
+        advanced technology
       </p>
     </section>
   );
