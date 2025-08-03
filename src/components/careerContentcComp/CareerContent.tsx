@@ -2,6 +2,8 @@ import clsxm from "@riverfl0w/clsxm";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import freelanceIcon from "@/assets/freelance-icon.png";
+import SkillTag, { coloursTagSelection } from "../SkillTag";
+import Link from "next/link";
 
 export default function CareerContent({
   children,
@@ -36,8 +38,80 @@ const CareerImg = ({ src, alt }: { src?: StaticImageData; alt: string }) => (
 
 CareerContent.CareerImg = CareerImg;
 
+const Position = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex w-full">
+    <p className="font-bold text-start">
+      Position: <span className="font-medium">{children}</span>
+    </p>
+  </div>
+);
+
+CareerContent.Position = Position;
+
+const Tags = ({
+  tags,
+}: {
+  tags: {
+    text: string;
+    color: (typeof coloursTagSelection)[number];
+  }[];
+}) => (
+  <div className="flex w-full gap-2 items-center">
+    <p className="font-bold">Related skills: </p>
+    <div className="flex flex-wrap gap-2">
+      {tags.map((val, i) => {
+        return <SkillTag key={i} text={val.text} color={val.color} />;
+      })}
+    </div>
+  </div>
+);
+
+CareerContent.SkillTags = Tags;
+
 const Description = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-justify">{children}</p>
+  <div className="w-full space-y-4">
+    <h3 className="font-bold text-2xl">Description</h3>
+    <p className="text-justify">{children}</p>
+  </div>
 );
 
 CareerContent.Description = Description;
+
+const Achieve = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="w-full space-y-4">
+      <h3 className="font-bold text-2xl">What i have achieved</h3>
+      <ul className="list-disc ml-5 text-justify">{children}</ul>
+    </div>
+  );
+};
+CareerContent.Achieve = Achieve;
+
+const NavigationCareer = ({
+  prev,
+  nextPath,
+}: {
+  prev?: { name: string; pathName: string };
+  nextPath?: { name: string; pathName: string };
+}) => (
+  <div className="flex justify-between w-full">
+    {prev ? (
+      <Link className="font-medium text-blue-500" href={prev.pathName}>
+        {" "}
+        &lt; {prev.name}
+      </Link>
+    ) : (
+      <div></div>
+    )}
+    {nextPath ? (
+      <Link className="font-medium text-blue-500" href={nextPath.pathName}>
+        {" "}
+        {nextPath.name} &gt;
+      </Link>
+    ) : (
+      <div></div>
+    )}
+  </div>
+);
+
+CareerContent.NavigationCareer = NavigationCareer;

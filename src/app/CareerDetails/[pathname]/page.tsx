@@ -7,16 +7,42 @@ export default async function page({
   params: { pathname: string };
 }) {
   const { pathname } = await params;
-  const res = Careers.find((val) => val.pathName === pathname);
+  const currentIndex = Careers.findIndex((val) => val.pathName === pathname);
+  const res = Careers[currentIndex];
   return (
     <>
-      {res ? (
+      {currentIndex !== -1 ? (
         <CareerContent>
           <CareerContent.Title>{res.title}</CareerContent.Title>
           <CareerContent.CareerImg src={res.src} alt={res.alt} />
+          <CareerContent.Position>{res.position}</CareerContent.Position>
+          <CareerContent.SkillTags tags={res.tags} />
           <CareerContent.Description>
             {res.description}
           </CareerContent.Description>
+          <CareerContent.Achieve>
+            {res.achivements.map((val, i) => (
+              <li key={i}>{val}</li>
+            ))}
+          </CareerContent.Achieve>
+          <CareerContent.NavigationCareer
+            prev={
+              currentIndex > 0
+                ? {
+                    name: Careers[currentIndex - 1].title,
+                    pathName: Careers[currentIndex - 1].pathName,
+                  }
+                : undefined
+            }
+            nextPath={
+              currentIndex < Careers.length - 1
+                ? {
+                    name: Careers[currentIndex + 1].title,
+                    pathName: Careers[currentIndex + 1].pathName,
+                  }
+                : undefined
+            }
+          />
         </CareerContent>
       ) : (
         <div>404</div>

@@ -10,6 +10,7 @@ type careersType = {
   src?: StaticImageData;
   title: string;
   position: string;
+  achivements: string[];
   tags: {
     text: string;
     color: (typeof coloursTagSelection)[number];
@@ -30,6 +31,13 @@ export const Careers: careersType[] = [
     description:
       "Labs Bootcamp is a four-months focused training program covering the software engineering fundamentals, best coding practices on common tech stacks and tools used in the enterprise development centre, as well as near-the-job training through simulated projects by the end of the internship.",
     position: "Trainee",
+    achivements: [
+      "Learned and developed dynamic responsive web interfaces using React, TypeScript, and Tailwind CSS, also learned about using modern frameworks like Nextjs in the project",
+      "Integrated RESTful APIs to handle real-time data, ensuring seamless communication between the backend and frontend",
+      "Have learned about optimizing frontend by monitoring performance using tools like lighthouse and bunde analyzer",
+      "Learned and Built backend APIs with Golang, focusing on clean architecture and efficient data handling",
+      "Worked with databases using PostgreSQL to design and query relational data models",
+    ],
     tags: [
       {
         text: "Golang",
@@ -47,6 +55,7 @@ export const Careers: careersType[] = [
     id: 2,
     alt: "freelance-icon",
     position: "Frontend Developer",
+    achivements: [],
     description:
       "A one month freelance project designing and building a quran recitation report web app.",
     tags: [
@@ -63,6 +72,7 @@ export const Careers: careersType[] = [
     alt: "bangkit logo",
     src: bangkitLogo,
     position: "Machine learning cohort",
+    achivements: [],
     description:
       "Program that sharpen individual learning and a team-based final project. 5 months program engaging in asynchronous classes via Dicoding Academy and Coursera, with access to expert consultation through discussion forums. The program offers a Machine Learning focused material, capstone project, and preparation for global certification exams upon completion.",
     tags: [
