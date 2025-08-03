@@ -1,17 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import tejoPhoto from "../../assets/Tejo fig.png";
 import clsx from "clsx";
 import style from "./dashboard.module.css";
 
-const Headline = () => {
+const Headline = async () => {
   return (
     <section id="headline" className={clsx(style.sectionDashboard)}>
       <h2 className={clsx("font-black text-2xl")}>
         Hello <span className="text-blue-600">Comrade!</span>
       </h2>
       <Image
-        src={tejoPhoto}
+        src="https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers//Tejo_fig.png"
         alt="tejo photos"
         className={clsx("w-[300px] h-[300px] object-cover")}
       />

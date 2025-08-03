@@ -12,6 +12,8 @@
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@riverfl0w/clsxm": "^0.1.2",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.53.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "next": "15.1.8",
