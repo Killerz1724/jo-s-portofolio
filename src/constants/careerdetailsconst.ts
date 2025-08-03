@@ -72,7 +72,11 @@ export const Careers: careersType[] = [
     alt: "bangkit logo",
     src: bangkitLogo,
     position: "Machine learning cohort",
-    achivements: [],
+    achivements: [
+      "Achieved the TensorFlow Developer Certificate",
+      "Help designed a Nutrition Monitor AI-based app as part of a team-based project",
+      "Scraping Nutrition value food as datasets",
+    ],
     description:
       "Program that sharpen individual learning and a team-based final project. 5 months program engaging in asynchronous classes via Dicoding Academy and Coursera, with access to expert consultation through discussion forums. The program offers a Machine Learning focused material, capstone project, and preparation for global certification exams upon completion.",
     tags: [
