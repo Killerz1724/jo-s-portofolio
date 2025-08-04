@@ -47,6 +47,12 @@ export const Careers: careersType[] = [
       "Learned and Built backend APIs with Golang, focusing on clean architecture and efficient data handling",
       "Worked with databases using PostgreSQL to design and query relational data models",
     ],
+    documentations: [
+      {
+        caption: "Trainee and Trainer Documentation",
+        link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/sealabsbootcamp/fotbar.png",
+      },
+    ],
     tags: [
       {
         text: "Golang",
@@ -107,6 +113,10 @@ export const Careers: careersType[] = [
             title="Embedded post"
           ></iframe>
         ),
+      },
+      {
+        caption: "Github Repository",
+        link: "https://github.com/Bismillah-Cuan-2/forsikatel-frontend/tree/dev",
       },
     ],
     title: "Quran Recitation Report Web (Freelance)",

@@ -107,7 +107,7 @@ const Documentation = ({
                   width={300}
                   className="relative rounded-lg"
                 />
-                <p className="absolute bottom-0 left-0 z-10 bg-black bg-opacity-50 text-white p-2 text-center">
+                <p className="absolute bottom-0 left-0 z-10 bg-black bg-opacity-50 rounded-b-lg text-white p-2 text-center">
                   {val.caption}
                 </p>
               </div>
