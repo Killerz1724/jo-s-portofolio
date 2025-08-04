@@ -2,6 +2,7 @@ import seaLabIcon from "@/assets/seo-logo.png";
 import bangkitLogo from "@/assets/bangkit-logo.png";
 import { coloursTagSelection } from "@/components/SkillTag";
 import { StaticImageData } from "next/image";
+import React from "react";
 
 type careersType = {
   id: number;
@@ -14,6 +15,10 @@ type careersType = {
   documentations?: {
     caption: string;
     link: string;
+  }[];
+  relatedLinks?: {
+    caption?: string;
+    link: string | React.ReactNode;
   }[];
   tags: {
     text: string;
@@ -89,6 +94,19 @@ export const Careers: careersType[] = [
       {
         caption: "Recap Page",
         link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/forsikatel/rekapPage.png",
+      },
+    ],
+    relatedLinks: [
+      {
+        link: (
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7308149490744471553?collapsed=1"
+            height="567"
+            width="504"
+            allowFullScreen
+            title="Embedded post"
+          ></iframe>
+        ),
       },
     ],
     title: "Quran Recitation Report Web (Freelance)",

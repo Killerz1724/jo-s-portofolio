@@ -1,5 +1,6 @@
 import CareerContent from "@/components/careerContentcComp/CareerContent";
 import { Careers } from "@/constants/careerdetailsconst";
+import React from "react";
 
 export default async function page({
   params,
@@ -28,6 +29,14 @@ export default async function page({
           {res.documentations && (
             <CareerContent.Documentation docs={res.documentations} />
           )}
+          {res.relatedLinks &&
+            res.relatedLinks.map((val, i) => {
+              return (
+                <CareerContent.RelatedLinks key={i}>
+                  {val.link}
+                </CareerContent.RelatedLinks>
+              );
+            })}
           <CareerContent.NavigationCareer
             prev={
               currentIndex > 0

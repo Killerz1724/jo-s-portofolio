@@ -120,6 +120,16 @@ const Documentation = ({
 };
 CareerContent.Documentation = Documentation;
 
+const RelatedLinks = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="w-full space-y-4">
+      <h3 className="font-bold text-2xl">Related Links</h3>
+      <ul className="list-disc ml-5 text-justify">{children}</ul>
+    </div>
+  );
+};
+CareerContent.RelatedLinks = RelatedLinks;
+
 const NavigationCareer = ({
   prev,
   nextPath,
@@ -127,7 +137,7 @@ const NavigationCareer = ({
   prev?: { name: string; pathName: string };
   nextPath?: { name: string; pathName: string };
 }) => (
-  <div className="flex justify-between w-full">
+  <div className="flex justify-between w-full mt-64">
     {prev ? (
       <Link className="font-medium text-blue-500" href={prev.pathName}>
         {" "}
