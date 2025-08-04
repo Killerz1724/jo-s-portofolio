@@ -25,6 +25,9 @@ export default async function page({
               <li key={i}>{val}</li>
             ))}
           </CareerContent.Achieve>
+          {res.documentations && (
+            <CareerContent.Documentation docs={res.documentations} />
+          )}
           <CareerContent.NavigationCareer
             prev={
               currentIndex > 0

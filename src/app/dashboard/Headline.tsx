@@ -12,6 +12,8 @@ const Headline = async () => {
       <Image
         src="https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers//Tejo_fig.png"
         alt="tejo photos"
+        width={300}
+        height={300}
         className={clsx("w-[300px] h-[300px] object-cover")}
       />
       <p className="text-center">

@@ -87,6 +87,39 @@ const Achieve = ({ children }: { children: React.ReactNode }) => {
 };
 CareerContent.Achieve = Achieve;
 
+const Documentation = ({
+  docs,
+}: {
+  docs: { caption: string; link: string }[];
+}) => {
+  return (
+    <div className="w-full space-y-4">
+      <h3 className="font-bold text-2xl">Documentation</h3>
+      <div className="grid grid-cols-2 gap-4 items-center justify-center">
+        {docs.map((val, i) => {
+          return (
+            <div key={i} className="rounded-lg w-full flex justify-center">
+              <div className="relative cursor-pointer">
+                <Image
+                  src={val.link}
+                  alt={val.caption}
+                  height={300}
+                  width={300}
+                  className="relative rounded-lg"
+                />
+                <p className="absolute bottom-0 left-0 z-10 bg-black bg-opacity-50 text-white p-2 text-center">
+                  {val.caption}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+CareerContent.Documentation = Documentation;
+
 const NavigationCareer = ({
   prev,
   nextPath,

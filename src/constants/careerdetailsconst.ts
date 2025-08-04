@@ -11,6 +11,10 @@ type careersType = {
   title: string;
   position: string;
   achivements: string[];
+  documentations?: {
+    caption: string;
+    link: string;
+  }[];
   tags: {
     text: string;
     color: (typeof coloursTagSelection)[number];
@@ -55,13 +59,37 @@ export const Careers: careersType[] = [
     id: 2,
     alt: "freelance-icon",
     position: "Frontend Developer",
-    achivements: [],
+    achivements: [
+      "Collaborated with a team to develop a Quran recitation report web application",
+      "Implemented and integrated a RESTful API for the registration page using Formik for form handling and submission",
+      "Developed a circular progress bar that dynamically updates based on backend data",
+      "Embedded YouTube videos into the application",
+      "Integrated a carousel using Framer Motion for smooth animations",
+    ],
     description:
       "A one month freelance project designing and building a quran recitation report web app.",
     tags: [
       { text: "Tailwind", color: "lightBlue" },
       { text: "Typescript", color: "darkBlue" },
       { text: "React", color: "lightBlue" },
+    ],
+    documentations: [
+      {
+        caption: "Login Page",
+        link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/forsikatel/loginPage.png",
+      },
+      {
+        caption: "Dashboard Page",
+        link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/forsikatel/dashboardPage.png",
+      },
+      {
+        caption: "Hadist Page",
+        link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/forsikatel/hadistPage.png",
+      },
+      {
+        caption: "Recap Page",
+        link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/forsikatel/rekapPage.png",
+      },
     ],
     title: "Quran Recitation Report Web (Freelance)",
     duration: { start: "february 2025", end: "march 2025" },
