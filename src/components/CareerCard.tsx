@@ -67,7 +67,7 @@ const CareerCard: React.FC<careerCardProps> = ({
           </span>
         </h4>
       </div>
-      <ButtonLink href={`/CareerDetails/${pathName}`}>Details</ButtonLink>
+      <ButtonLink href={`/career-details/${pathName}`}>Details</ButtonLink>
     </div>
   );
 };
