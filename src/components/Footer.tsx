@@ -1,6 +1,7 @@
 import { mdiForum, mdiGmail, mdiLinkedin, mdiWhatsapp } from "@mdi/js";
 import Icon from "@mdi/react";
 import Link from "next/link";
+import CopyClipboard from "./CopyClipboard";
 
 const Footer = () => {
   const yearNow = new Date().getFullYear();
@@ -28,11 +29,15 @@ const Footer = () => {
                 <Icon path={mdiLinkedin} size={2} color={"#2563eb"} />
               </Link>
             </span>
+            <CopyClipboard
+              displayText={null}
+              textCopy="rifqihananto50@gmail.com"
+              leftIcon={mdiGmail}
+            />
             <span>
-              <Icon path={mdiGmail} size={2} color={"#2563eb"} />
-            </span>
-            <span>
-              <Icon path={mdiWhatsapp} size={2} color={"#2563eb"} />
+              <Link href="https://wa.me/6281313568703">
+                <Icon path={mdiWhatsapp} size={2} color={"#2563eb"} />
+              </Link>
             </span>
           </div>
         </div>
