@@ -37,16 +37,23 @@ export default async function page({
                     {val.caption && (
                       <span className="font-bold">{val.caption} :</span>
                     )}{" "}
-                    {typeof val.link === "string" ? (
+                    {val.embededLink ? (
+                      <iframe
+                        src={val.link}
+                        height="567"
+                        width="504"
+                        className="w-[350px] h-[400px] lg:w-[504px] lg:h-[567px]"
+                        allowFullScreen
+                        title="Embedded post"
+                      ></iframe>
+                    ) : (
                       <a
                         target="_blank"
-                        className="text-blue-500"
+                        className="text-blue-500 hover:underline"
                         href={val.link}
                       >
                         {val.link}
                       </a>
-                    ) : (
-                      val.link
                     )}
                   </li>
                 );

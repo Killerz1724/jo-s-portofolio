@@ -107,7 +107,7 @@ const Documentation = ({
                   width={300}
                   className="relative rounded-lg"
                 />
-                <p className="absolute bottom-0 left-0 z-10 bg-black bg-opacity-50 rounded-b-lg text-white p-2 text-center">
+                <p className="absolute bottom-0 left-0 z-10 w-full bg-black bg-opacity-50 rounded-b-lg text-white p-2 text-center">
                   {val.caption}
                 </p>
               </div>
@@ -124,7 +124,7 @@ const RelatedLinks = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="w-full space-y-4">
       <h3 className="font-bold text-2xl">Related Links</h3>
-      <ul className="list-disc ml-5 text-justify">{children}</ul>
+      <ul className="list-disc space-y-4 ml-5 text-justify">{children}</ul>
     </div>
   );
 };

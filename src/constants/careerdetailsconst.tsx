@@ -2,7 +2,6 @@ import seaLabIcon from "@/assets/seo-logo.png";
 import bangkitLogo from "@/assets/bangkit-logo.png";
 import { coloursTagSelection } from "@/components/SkillTag";
 import { StaticImageData } from "next/image";
-import React from "react";
 
 type careersType = {
   id: number;
@@ -18,7 +17,8 @@ type careersType = {
   }[];
   relatedLinks?: {
     caption?: string;
-    link: string | React.ReactNode;
+    link: string;
+    embededLink?: boolean;
   }[];
   tags: {
     text: string;
@@ -104,15 +104,8 @@ export const Careers: careersType[] = [
     ],
     relatedLinks: [
       {
-        link: (
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7308149490744471553?collapsed=1"
-            height="567"
-            width="504"
-            allowFullScreen
-            title="Embedded post"
-          ></iframe>
-        ),
+        link: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7308149490744471553?collapsed=1",
+        embededLink: true,
       },
       {
         caption: "Github Repository",

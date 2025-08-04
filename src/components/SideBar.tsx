@@ -8,7 +8,7 @@ const SideBar = () => {
     <>
       <div
         className={clsx(
-          "fixed left-0 flex flex-col h-screen justify-center items-center  ml-1 lg:ml-5 text-white"
+          "fixed z-50 left-0 flex flex-col h-screen justify-center items-center  ml-1 lg:ml-5 text-white"
         )}
       >
         <div
