@@ -5,7 +5,7 @@ import React from "react";
 export default async function page({
   params,
 }: {
-  params: { pathname: string };
+  params: Promise<{ pathname: string }>;
 }) {
   const { pathname } = await params;
   const currentIndex = Careers.findIndex((val) => val.pathName === pathname);
