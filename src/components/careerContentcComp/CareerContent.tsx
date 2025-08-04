@@ -4,6 +4,7 @@ import React from "react";
 import freelanceIcon from "@/assets/freelance-icon.png";
 import SkillTag, { coloursTagSelection } from "../SkillTag";
 import Link from "next/link";
+import { AddtionalSection } from "@/constants/careerdetailsconst";
 
 export default function CareerContent({
   children,
@@ -129,6 +130,25 @@ const RelatedLinks = ({ children }: { children: React.ReactNode }) => {
   );
 };
 CareerContent.RelatedLinks = RelatedLinks;
+
+const AdditionalSection = ({ contents }: { contents: AddtionalSection }) => (
+  <>
+    {contents.map((sect, i) => {
+      return (
+        <div key={i} className="w-full space-y-4">
+          <h3 className="font-bold text-2xl">{sect.titleSection}</h3>
+          <ul className="list-disc ml-5 text-justify">
+            {sect.content.map((val, i) => (
+              <li key={i}>{val}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    })}
+  </>
+);
+
+CareerContent.AdditionalSection = AdditionalSection;
 
 const NavigationCareer = ({
   prev,

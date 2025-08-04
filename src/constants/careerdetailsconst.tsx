@@ -3,6 +3,10 @@ import bangkitLogo from "@/assets/bangkit-logo.png";
 import { coloursTagSelection } from "@/components/SkillTag";
 import { StaticImageData } from "next/image";
 
+export type AddtionalSection = {
+  titleSection: string;
+  content: string[];
+}[];
 type careersType = {
   id: number;
   description: string;
@@ -20,6 +24,7 @@ type careersType = {
     link: string;
     embededLink?: boolean;
   }[];
+  additionalSection?: AddtionalSection;
   tags: {
     text: string;
     color: (typeof coloursTagSelection)[number];
@@ -51,6 +56,28 @@ export const Careers: careersType[] = [
       {
         caption: "Trainee and Trainer Documentation",
         link: "https://evqrdlwphgtlcoafoaas.supabase.co/storage/v1/object/public/careers/sealabsbootcamp/fotbar.png",
+      },
+    ],
+    additionalSection: [
+      {
+        titleSection: "TechStack/Libraries Frontend",
+        content: [
+          "Used react-hook-form for form handling in the group project such as login and register form",
+          "Used shadcn/ui for UI components such as carousel from embla-carousel for promotion banner",
+          "Used react-query for data fetching and caching such as fetching products from API",
+          "Used zustand for state management such as cart",
+          "Used axios for HTTP requests and error handling such as post, update, and delete API",
+          "Used toastify for notification such as success, error, and warning",
+        ],
+      },
+      {
+        titleSection: "TechStack/Libraries Backend",
+        content: [
+          "Used Golang for backend development",
+          "Used PostgreSQL for database management",
+          "Used Gin for web framework",
+          "Used JWT for authentication",
+        ],
       },
     ],
     tags: [

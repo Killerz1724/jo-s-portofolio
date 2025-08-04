@@ -26,9 +26,13 @@ export default async function page({
               <li key={i}>{val}</li>
             ))}
           </CareerContent.Achieve>
+          {res.additionalSection && (
+            <CareerContent.AdditionalSection contents={res.additionalSection} />
+          )}
           {res.documentations && (
             <CareerContent.Documentation docs={res.documentations} />
           )}
+
           {res.relatedLinks && (
             <CareerContent.RelatedLinks>
               {res.relatedLinks.map((val, i) => {
