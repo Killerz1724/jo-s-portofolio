@@ -2,12 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: "standalone",
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "evqrdlwphgtlcoafoaas.supabase.co", // Or your specific Supabase project URL like 'your-project-id.supabase.co'
-        pathname: "/storage/v1/object/public/**", // Adjust this path if your bucket structure is different
+        // hostname: "evqrdlwphgtlcoafoaas.supabase.co", // Or your specific Supabase project URL like 'your-project-id.supabase.co'
+        // pathname: "/storage/v1/object/public/**",
+        hostname: "**", // Or your specific Supabase project URL like 'your-project-id.supabase.co'
+        pathname: "**", // Adjust this path if your bucket structure is different
       },
     ],
   },
@@ -27,5 +30,7 @@ const nextConfig: NextConfig = {
     ];
   },
 };
+
+module.exports = nextConfig;
 
 export default nextConfig;
