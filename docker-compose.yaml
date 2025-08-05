@@ -1,0 +1,28 @@
+version: "0.5"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-jo-s-portofolio
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+    depends_on:
+      - frontend
+    networks:
+      - jo-s-portofolio
+  frontend:
+    build: .
+    container_name: jo-s-portofolio
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    networks:
+      - jo-s-portofolio
+    environment:
+      - NODE_ENV=production
+
+networks:
+  jo-s-portofolio:
+    driver: bridge
