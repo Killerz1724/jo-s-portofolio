@@ -1,19 +1,18 @@
 version: "0.5"
 services:
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: nginx-jo-s-portofolio
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   restart: always
-  #   volumes:
-  #     - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
-  #     - ./nginx/certs:/etc/nginx/ssl
-  #   depends_on:
-  #     - frontend
-  #   networks:
-  #     - jo-s-portofolio
+  nginx:
+    image: nginx:latest
+    container_name: nginx-jo-s-portofolio
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+    depends_on:
+      - frontend
+    networks:
+      - jo-s-portofolio
   frontend:
     build: .
     container_name: jo-s-portofolio
