@@ -2,6 +2,8 @@ import { mdiFileDocumentMultiple } from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
 import style from "./dashboard.module.css";
+import { Projects as ProjectList } from "@/constants/projectconstant";
+import ProjectCard from "@/components/ProjectCard";
 export default function Projects() {
   return (
     <section id="projects" className={clsx(style.sectionDashboard, "flex-col")}>
@@ -18,7 +20,14 @@ export default function Projects() {
           />
         </span>
       </div>
-      Projects
+      <div className="w-full grid grid-cols-1  lg:grid-cols-3  gap-[1rem]">
+        {ProjectList.map((val, i) => {
+          return <ProjectCard key={i} project={val} />;
+        })}
+      </div>
+      <h4 className="text-xl font-semibold mt-10">
+        More Projects will be added soon...
+      </h4>
     </section>
   );
 }
