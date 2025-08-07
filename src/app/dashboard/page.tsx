@@ -3,6 +3,7 @@ import Headline from "./Headline";
 import Skills from "./Skills";
 import Career from "./Career";
 import AnimateOnScroll from "@/lib/AnimateOnScroll";
+import Projects from "./Projects";
 
 const Dashboard = () => {
   return (
@@ -15,6 +16,9 @@ const Dashboard = () => {
       </AnimateOnScroll>
       <AnimateOnScroll>
         <Career />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <Projects />
       </AnimateOnScroll>
     </div>
   );

@@ -90,7 +90,7 @@ export const Careers: careersType[] = [
       { text: "React", color: "lightBlue" },
       { text: "NextJs", color: "red" },
     ],
-    duration: { start: "february 2025", end: "now" },
+    duration: { start: "february 2025", end: "july 2025" },
     pathName: "sea-lab",
   },
   {

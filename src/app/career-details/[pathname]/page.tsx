@@ -1,13 +1,13 @@
 import CareerContent from "@/components/careerContentcComp/CareerContent";
 import { Careers } from "@/constants/careerdetailsconst";
-import React from "react";
+import React, { use } from "react";
 
-export default async function page({
+export default function CareerDetailsPage({
   params,
 }: {
   params: Promise<{ pathname: string }>;
 }) {
-  const { pathname } = await params;
+  const { pathname } = use(params);
   const currentIndex = Careers.findIndex((val) => val.pathName === pathname);
   const res = Careers[currentIndex];
   return (
@@ -88,4 +88,8 @@ export default async function page({
       )}
     </>
   );
+}
+
+export async function generateStaticParams() {
+  return Careers.map((val) => ({ pathname: val.pathName }));
 }

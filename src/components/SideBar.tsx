@@ -1,7 +1,14 @@
-import { mdiBriefcase, mdiForum, mdiHammerScrewdriver, mdiHome } from "@mdi/js";
+import {
+  mdiBriefcase,
+  mdiFileDocumentMultiple,
+  mdiForum,
+  mdiHammerScrewdriver,
+  mdiHome,
+} from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
 import Link from "next/link";
+import Tooltip from "./Tooltip";
 
 const SideBar = () => {
   return (
@@ -17,40 +24,59 @@ const SideBar = () => {
           )}
         >
           <span>
-            <Link href="/#headline">
-              <Icon
-                path={mdiHome}
-                className="size-[2rem] lg:size-[2rem]"
-                color={"white"}
-              />
-            </Link>
+            <Tooltip text="Dashboard" position="right">
+              <Link href="/#headline">
+                <Icon
+                  path={mdiHome}
+                  className="size-[2rem] lg:size-[2rem]"
+                  color={"white"}
+                />
+              </Link>
+            </Tooltip>
           </span>
           <span>
-            <Link href="/#skills">
-              <Icon
-                path={mdiHammerScrewdriver}
-                className="size-[2rem] lg:size-[2rem]"
-                color={"white"}
-              />
-            </Link>
+            <Tooltip text="My Skills" position="right">
+              <Link href="/#skills">
+                <Icon
+                  path={mdiHammerScrewdriver}
+                  className="size-[2rem] lg:size-[2rem]"
+                  color={"white"}
+                />
+              </Link>
+            </Tooltip>
           </span>
           <span>
-            <Link href="/#career">
-              <Icon
-                path={mdiBriefcase}
-                className="size-[2rem] lg:size-[2rem]"
-                color={"white"}
-              />
-            </Link>
+            <Tooltip text="My Careers" position="right">
+              <Link href="/#career">
+                <Icon
+                  path={mdiBriefcase}
+                  className="size-[2rem] lg:size-[2rem]"
+                  color={"white"}
+                />
+              </Link>
+            </Tooltip>
           </span>
           <span>
-            <Link href="/#contact">
-              <Icon
-                path={mdiForum}
-                className="size-[2rem] lg:size-[2rem]"
-                color={"white"}
-              />
-            </Link>
+            <Tooltip text="My Projects" position="right">
+              <Link href="/#projects">
+                <Icon
+                  path={mdiFileDocumentMultiple}
+                  className="size-[2rem] lg:size-[2rem]"
+                  color={"white"}
+                />
+              </Link>
+            </Tooltip>
+          </span>
+          <span>
+            <Tooltip text="Contact Me!" position="right">
+              <Link href="/#contact">
+                <Icon
+                  path={mdiForum}
+                  className="size-[2rem] lg:size-[2rem]"
+                  color={"white"}
+                />
+              </Link>
+            </Tooltip>
           </span>
         </div>
       </div>
