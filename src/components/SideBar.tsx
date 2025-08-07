@@ -1,4 +1,10 @@
-import { mdiBriefcase, mdiForum, mdiHammerScrewdriver, mdiHome } from "@mdi/js";
+import {
+  mdiBriefcase,
+  mdiFileDocumentMultiple,
+  mdiForum,
+  mdiHammerScrewdriver,
+  mdiHome,
+} from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
 import Link from "next/link";
@@ -38,6 +44,15 @@ const SideBar = () => {
             <Link href="/#career">
               <Icon
                 path={mdiBriefcase}
+                className="size-[2rem] lg:size-[2rem]"
+                color={"white"}
+              />
+            </Link>
+          </span>
+          <span>
+            <Link href="/#projects">
+              <Icon
+                path={mdiFileDocumentMultiple}
                 className="size-[2rem] lg:size-[2rem]"
                 color={"white"}
               />
