@@ -8,6 +8,7 @@ import {
 import Icon from "@mdi/react";
 import Link from "next/link";
 import CopyClipboard from "./CopyClipboard";
+import Tooltip from "./Tooltip";
 
 const Footer = () => {
   const yearNow = new Date().getFullYear();
@@ -35,11 +36,13 @@ const Footer = () => {
                 <Icon path={mdiLinkedin} size={2} color={"#2563eb"} />
               </Link>
             </span>
-            <CopyClipboard
-              displayText={null}
-              textCopy="rifqihananto50@gmail.com"
-              leftIcon={mdiGmail}
-            />
+            <Tooltip text="rifqihananto50@gmail.com" position="top">
+              <CopyClipboard
+                displayText={null}
+                textCopy="rifqihananto50@gmail.com"
+                leftIcon={mdiGmail}
+              />
+            </Tooltip>
             <span>
               <Link href="https://wa.me/6281313568703" target="_blank">
                 <Icon path={mdiWhatsapp} size={2} color={"#2563eb"} />
