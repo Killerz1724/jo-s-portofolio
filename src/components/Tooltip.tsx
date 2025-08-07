@@ -10,8 +10,8 @@ export default function Tooltip({
   text,
 }: {
   children: React.ReactNode;
-  tooltipClassname?: string;
-  containerClassname?: string;
+  tooltipClassname?: React.HTMLAttributes<HTMLElement>["className"];
+  containerClassname?: React.HTMLAttributes<HTMLElement>["className"];
   position?: "top" | "left" | "right" | "bottom";
   text: string;
 }) {
