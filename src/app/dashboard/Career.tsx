@@ -7,7 +7,7 @@ import style from "./dashboard.module.css";
 
 const Career = () => {
   return (
-    <section id="career" className={clsx(style.sectionDashboard)}>
+    <section id="career" className={clsx(style.sectionDashboard, "flex-col ")}>
       <div className="flex items-center gap-[0.5rem]">
         <h2 className="font-bold text-4xl">
           My <span className="text-blue-600">Careers</span>
