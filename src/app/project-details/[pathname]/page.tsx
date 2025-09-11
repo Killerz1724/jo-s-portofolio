@@ -33,6 +33,11 @@ export default function ProjectDetailsPage({
               return <li key={i}>{val}</li>;
             })}
           </ProjectContent.Achieve>
+          <ProjectContent.Features>
+            {project.features.map((val, i) => {
+              return <li key={i}>{val}</li>;
+            })}
+          </ProjectContent.Features>
           <ProjectContent.Documentation docs={project.documentation} />
           <ProjectContent.RelatedLinks>
             {project.relatedLinks?.map((val, i) => {
