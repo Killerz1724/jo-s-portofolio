@@ -66,10 +66,22 @@ const Achieve = ({ children }: { children: React.ReactNode }) => {
 };
 ProjectContent.Achieve = Achieve;
 
+const Features = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="w-full space-y-4">
+      <h3 className="font-bold text-2xl">
+        This project has the following features
+      </h3>
+      <ul className="list-disc ml-5 text-justify">{children}</ul>
+    </div>
+  );
+};
+ProjectContent.Features = Features;
+
 const Documentation = ({
   docs,
 }: {
-  docs: { caption: string; src: string }[];
+  docs: { caption: string; src: string; type: "video" | "image" }[];
 }) => {
   return (
     <div className="w-full space-y-4">
@@ -79,19 +91,29 @@ const Documentation = ({
           return (
             <div
               key={i}
-              className="relative rounded-lg w-full flex justify-center"
+              className="relative rounded-lg w-[15rem] h-[10rem] md:w-[20rem] md:h-[10rem] flex justify-center"
             >
               <Suspense fallback={<div>Loading...</div>}>
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  aria-label="Video player"
-                >
-                  <source src={val.src} type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
+                {val.type === "video" && (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-label="Video player"
+                  >
+                    <source src={val.src} type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+                {val.type === "image" && (
+                  <Image
+                    src={val.src}
+                    alt={val.caption}
+                    fill
+                    className="relative rounded-lg"
+                  />
+                )}
               </Suspense>
               <p className="absolute bottom-0 left-0 z-10 w-full bg-black bg-opacity-50 rounded-b-lg text-white p-2 text-center">
                 {val.caption}
