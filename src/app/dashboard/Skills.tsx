@@ -13,72 +13,45 @@ import tensorflowIcon from "@/assets/tensorflow-icon.png";
 import PostgreSqlIcon from "@/assets/Postgresql_elephant.png";
 import Tooltip from "@/components/Tooltip";
 
+const skillsList = [
+  { name: "ReactJs", icon: reactIcon },
+  { name: "TypeScript", icon: tsIcon },
+  { name: "Tailwind CSS", icon: tailwindIcon },
+  { name: "Next.js", icon: nextJsIcon },
+  { name: "Golang", icon: golangIcon },
+  { name: "PostgreSQL", icon: PostgreSqlIcon },
+  { name: "TensorFlow", icon: tensorflowIcon },
+];
+
 const Skills = () => {
   return (
-    <section id="skills" className={clsx(style.sectionDashboard, "flex-col")}>
-      <div className="flex items-center gap-[0.5rem]">
-        <h2 className="font-bold text-4xl">
+    <section id="skills" className={clsx(style.sectionDashboard, "flex-col w-full")}>
+      <div className="flex items-center gap-3">
+        <h2 className="font-extrabold text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
           My <span className="text-blue-600">Skills</span>
         </h2>
-        <span>
+        <span className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600">
           <Icon
             path={mdiHammerScrewdriver}
-            className={clsx("size-[2rem] lg:size-[3rem]")}
-            size={1.5}
+            className="size-7 lg:size-8"
+            size={1.3}
             color={"#2563eb"}
           />
         </span>
       </div>
-      <div className="grid grid-cols-2 lg:grid-flow-col gap-[3rem] items-center ">
-        <Tooltip text="ReactJs" tooltipClassname="-left-1/4 -top-1/4">
-          <Image
-            src={reactIcon}
-            alt="react icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="Typescript" tooltipClassname="-left-1/4 -top-1/4">
-          <Image
-            src={tsIcon}
-            alt="typescript icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="Tailwind" tooltipClassname="-left-1/4 -top-1/4">
-          <Image
-            src={tailwindIcon}
-            alt="tailwind icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="NextJs" tooltipClassname="-left-1/4 -top-1/4">
-          <Image
-            src={nextJsIcon}
-            alt="nextJs icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="Golang" tooltipClassname="left-0 -top-1/4">
-          <Image
-            src={golangIcon}
-            alt="golang icon"
-            className={clsx("w-[120px] h-[120px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="PostgreSQL" tooltipClassname="left-0 -top-1/4">
-          <Image
-            src={PostgreSqlIcon}
-            alt="PostgreSQL icon"
-            className={clsx("w-[120px] h-[120px] object-contain")}
-          />
-        </Tooltip>
-        <Tooltip text="Tensorflow" tooltipClassname="-left-1/4 -top-1/4">
-          <Image
-            src={tensorflowIcon}
-            alt="tensorflow icon"
-            className={clsx("w-[100px] h-[100px] object-contain")}
-          />
-        </Tooltip>
+
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6 w-full mt-6 items-center">
+        {skillsList.map((skill, index) => (
+          <Tooltip key={index} text={skill.name} position="top">
+            <div className="group p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center h-28 w-full cursor-pointer">
+              <Image
+                src={skill.icon}
+                alt={`${skill.name} icon`}
+                className="min-h-14 w-full object-contain transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+          </Tooltip>
+        ))}
       </div>
     </section>
   );

@@ -7,25 +7,25 @@ import style from "./dashboard.module.css";
 
 const Career = () => {
   return (
-    <section id="career" className={clsx(style.sectionDashboard, "flex-col ")}>
-      <div className="flex items-center gap-[0.5rem]">
-        <h2 className="font-bold text-4xl">
+    <section id="career" className={clsx(style.sectionDashboard, "flex-col w-full")}>
+      <div className="flex items-center gap-3">
+        <h2 className="font-extrabold text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
           My <span className="text-blue-600">Careers</span>
         </h2>
-        <span>
+        <span className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600">
           <Icon
             path={mdiBriefcase}
-            className={clsx("size-[2rem] lg:size-[3rem]")}
-            size={1.5}
+            className="size-7 lg:size-8"
+            size={1.3}
             color={"#2563eb"}
           />
         </span>
       </div>
-      <div className="grid grid-cols-1 items-stretch lg:grid-cols-3  gap-[1rem]">
-        {Careers.map((val, i) => {
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 items-stretch">
+        {Careers.map((val) => {
           return (
             <CareerCard
-              key={i}
+              key={val.id}
               alt={val.alt}
               duration={val.duration}
               pathName={val.pathName}

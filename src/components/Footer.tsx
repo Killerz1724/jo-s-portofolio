@@ -15,49 +15,68 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="flex flex-col w-full justify-center px-4 md:px-32 mt-32  gap-5 "
+      className="flex flex-col w-full justify-center px-4 md:px-10 lg:px-20 mt-32 gap-5"
     >
-      <div className="flex flex-col lg:flex-row gap-4 justify-between pt-8 pb-24 mx-[1/4] border-t-2  border-gray-200 w-full">
-        <div className="space-y-4 w-[24rem]">
-          <h2 className="font-bold text-base md:text-2xl">About This Page</h2>
-          <p className="text-justify text-xs md:text-base">
-            This page is built using Nextjs framework with typescript as core
-            language and tailwindcss. Deployed using vps with docker
+      <div className="flex flex-col lg:flex-row gap-8 justify-between pt-8 pb-20 border-t border-slate-200 dark:border-slate-800 w-full">
+        <div className="space-y-3 max-w-md">
+          <h2 className="font-extrabold text-xl md:text-2xl text-slate-900 dark:text-white tracking-tight">
+            About This Page
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            This portfolio is built using Next.js 15 App Router with TypeScript,
+            React 19, and Tailwind CSS. Deployed using Docker on VPS.
           </p>
         </div>
         <div>
-          <div className="flex gap-2">
-            <h2 className="md:text-2xl font-bold text-blue-500">Contact Me!</h2>
-            <Icon path={mdiForum} size={0.9} color={"#2563eb"} />
+          <div className="flex items-center gap-2 mb-4">
+            <h2 className="text-xl md:text-2xl font-extrabold text-blue-600 dark:text-blue-400">
+              Contact Me!
+            </h2>
+            <Icon
+              path={mdiForum}
+              size={0.9}
+              className="text-blue-600 dark:text-blue-400"
+            />
           </div>
-          <div className="flex gap-5">
-            <span>
-              <Link href="/linkedin" target="_blank">
-                <Icon path={mdiLinkedin} size={2} color={"#2563eb"} />
-              </Link>
-            </span>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/linkedin"
+              target="_blank"
+              aria-label="LinkedIn Profile"
+              className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              <Icon path={mdiLinkedin} size={1.2} />
+            </Link>
             <Tooltip text="rifqihananto50@gmail.com" position="top">
-              <CopyClipboard
-                displayText={null}
-                textCopy="rifqihananto50@gmail.com"
-                leftIcon={mdiGmail}
-              />
+              <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                <CopyClipboard
+                  displayText={null}
+                  textCopy="rifqihananto50@gmail.com"
+                  leftIcon={mdiGmail}
+                />
+              </div>
             </Tooltip>
-            <span>
-              <Link href="https://wa.me/6281313568703" target="_blank">
-                <Icon path={mdiWhatsapp} size={2} color={"#2563eb"} />
-              </Link>
-            </span>
-            <span>
-              <Link href="https://github.com/Killerz1724" target="_blank">
-                <Icon path={mdiGithub} size={2} color={"#2563eb"} />
-              </Link>
-            </span>
+            <Link
+              href="https://wa.me/6281313568703"
+              target="_blank"
+              aria-label="WhatsApp Contact"
+              className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              <Icon path={mdiWhatsapp} size={1.2} />
+            </Link>
+            <Link
+              href="https://github.com/Killerz1724"
+              target="_blank"
+              aria-label="GitHub Profile"
+              className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              <Icon path={mdiGithub} size={1.2} />
+            </Link>
           </div>
         </div>
       </div>
-      <p className="font-semibold text-center text-gray-300 mb-5">
-        &copy; {yearNow} - Tejofolio
+      <p className="font-medium text-center text-xs text-slate-400 dark:text-slate-600 mb-8">
+        &copy; {yearNow} — Tejofolio. All rights reserved.
       </p>
     </footer>
   );

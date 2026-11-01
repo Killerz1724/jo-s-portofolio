@@ -1,7 +1,5 @@
-"use client";
-
 import clsxm from "@riverfl0w/clsxm";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
 export default function ButtonLink({
@@ -13,18 +11,17 @@ export default function ButtonLink({
   href: string;
   className?: string;
 }) {
-  const router = useRouter();
   return (
     <div className="flex w-full justify-start">
-      <button
-        onClick={() => router.push(href)}
+      <Link
+        href={href}
         className={clsxm(
-          `px-4 py-2 text-white text-sm font-semibold rounded-md bg-blue-400 hover:cursor-pointer hover:bg-blue-600 active:bg-blue-600 transition-colors`,
+          "inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-semibold text-white rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 shadow-sm hover:shadow transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
           className
         )}
       >
         {children}
-      </button>
+      </Link>
     </div>
   );
 }

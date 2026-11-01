@@ -26,9 +26,9 @@ export default function Tooltip({
       {isVisible && (
         <div
           className={clsxm(
-            "absolute text-white z-10 cursor-default bg-gray-800  rounded-lg p-2 animate-fade-right animate-duration-300 ml-10 w-max",
-            position === "top" && "-top-3/4 -left-32 animate-fade-up",
-            position === "bottom" && "-bottom-3/4 -left-32 animate-fade-down",
+            "absolute text-white z-20 cursor-default bg-slate-900 dark:bg-slate-800 dark:text-slate-100 dark:border dark:border-slate-700 shadow-xl rounded-lg px-2.5 py-1 text-xs font-medium animate-fade-right animate-duration-300 ml-10 w-max pointer-events-none",
+            position === "top" && "-top-[20%] -left-8 animate-fade-up",
+            position === "bottom" && "-bottom-[20%] -left-8  animate-fade-down",
             position === "left" && "top-0 -right-32 animate-fade-left",
             position === "right" && "top-0 left-0 animate-fade-right",
             tooltipClassname
